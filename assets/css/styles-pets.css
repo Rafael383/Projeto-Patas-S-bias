@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f6f6;
+    background-image: url(/assets/images/pets-images/background-curiosidades.jpg);
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    line-height: 3rem;
+}
+
+
+img {
+    width: 100%;
+}
+
+a,
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.height {
+    height: 55vh !important;
+
+    @media (width >=992px) {
+        height: max-content
+    }
+}
+
+
+.header {
+    height: 150px;
+    background-color: #e9c46a;
+    color: white;
+
+    .container {
+        max-width: 125rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 4rem;
+        position: relative;
+
+        @media (width >=992px) {
+            padding: 2.5rem 2rem;
+        }
+    }
+
+    .header__brand {
+        width: 16rem;
+    }
+
+    .header__nav-container {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        top: 17rem;
+        left: 50%;
+        width: 90%;
+        height: 0;
+        overflow: hidden;
+        background-color: #fff2cc;
+        border-radius: 2rem;
+        max-width: 65rem;
+        transform: translate(-50%);
+        transition: height .5s;
+        z-index: 55;
+
+        @media (width >=992px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-direction: row;
+            padding: 2rem;
+            gap: 5rem;
+            position: static;
+            width: max-content;
+            height: max-content;
+            background-color: transparent;
+            transform: translate(0);
+            max-width: 100%;
+
+        }
+    }
+
+    .header__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        @media (width >=992px) {
+            display: flex;
+            flex-direction: row;
+            gap: 5rem;
+        }
+    }
+
+    .header__list-item {
+        font-size: 1.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        position: relative;
+        width: max-content;
+
+        a {
+            color: 6046DF;
+            transition: all .3s;
+            color: white;
+
+            &:hover {
+                color: #6046DF;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: .3rem;
+                border-radius: 1rem;
+                background-color: #F8B861;
+                transition: all .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+        }
+
+    }
+
+
+li a::after{
+    content: " ";
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #6046DF;
+    position: absolute;
+}
+
+
+li a:hover::after{
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+    .header__button-voltar {
+        background-color: #6046DF;
+        border-radius: 5rem;
+        padding: 1rem 3rem;
+        text-align: center;
+        margin-left: 0;
+
+        a {
+            color: #fff;
+
+            &:hover {
+                color: #fff;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+
+        @media (width >=992px) {
+            margin-left: 7rem;
+        }
+    }
+
+    .header__shopping-cart {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 1.5rem 2.8rem;
+        border-radius: 2rem;
+        background-color: #fff;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: all .3s;
+
+        &:hover {
+            background-color: #caa127;
+            color: #fff;
+        }
+
+        &:hover div {
+            background-color: #fff;
+        }
+
+        div {
+            background-color: #caa127;
+            padding: .7rem 1.2rem;
+            border-radius: 1rem;
+
+            i {
+                color: #000;
+                font-size: 2rem;
+            }
+        }
+    }
+
+
+    .header__btn-mobile {
+        @media (width >=992px) {
+            display: none;
+        }
+
+        #checkbox {
+            display: none;
+        }
+
+        .toggle {
+            position: relative;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition-duration: 0.5s;
+        }
+
+        .bars {
+            width: 100%;
+            height: 4px;
+            background-color: #000;
+            border-radius: 4px;
+        }
+
+        #bar2 {
+            transition-duration: .8s;
+        }
+
+        #bar1,
+        #bar3 {
+            width: 70%;
+        }
+
+        #checkbox:checked+.toggle .bars {
+            position: absolute;
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-two {
+            transform: scaleX(0);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-one {
+            width: 100%;
+            transform: rotate(45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-three {
+            width: 100%;
+            transform: rotate(-45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle {
+            transition-duration: .5s;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+
+.about-cao-idoso {
+    background-image: url(../images/pets-images/background-cães-idosos.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.about-cao-aposentado {
+    background-image: url(../images/pets-images/background-aposentado.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about {
+    background-image: url(../images/pets-images/background-guia.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.616);
+        z-index: 5;
+    }
+
+    .about-texts {
+        z-index: 10;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 75rem;
+        margin: 0 auto;
+
+    }
+
+    .about-texts h2 {
+        font-size: 3.2rem;
+        color: #e6bb3c;
+        text-shadow: 2px 2px black;
+        line-height: 7.2rem;
+
+        @media (width >=768px) {
+            font-size: 6.2rem;
+        }
+    }
+
+    .about-texts p {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        line-height: 2.8rem;
+        color: white;
+        padding: 0 3rem;
+
+        @media (width >=768px) {
+            font-size: 1.6rem;
+            line-height: 3.2rem;
+        }
+    }
+}
+
+
+.curiosidades {
+    margin-top: 10rem;
+    height: 400px;
+    color: #6046DF;
+
+    h2 {
+        font-size: 4.2rem;
+        text-align: center;
+        margin-bottom: 10rem;
+        background-image: linear-gradient(to right, #6046DF, #2a1788);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: black;
+    }
+
+    .curiosidades-content {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 50px;
+        max-width: 125rem;
+        margin: 0 auto;
+
+        @media (width >=768px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @media (width >=992px) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    .card {
+        position: relative;
+        max-width: 310px;
+        height: 230px;
+        background-color: #fff;
+        margin: 30px auto;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.3s ease-in-out;
+        border-radius: 15px;
+        /* border: 1px solid #6046DF; */
+    }
+
+    .card:hover {
+        height: 350px;
+    }
+
+    .card:hover .content {
+        visibility: visible;
+        opacity: 100;
+    }
+
+
+    .card .image {
+        position: relative;
+        width: 260px;
+        height: 260px;
+        top: -40%;
+        left: 8px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .card .image img {
+        /* width: 260px; */
+        height: 260px;
+        border-radius: 15px;
+    }
+
+    .card .content {
+        margin-top: 2rem;
+        position: relative;
+        top: -140px;
+        padding: 10px 15px;
+        color: #111;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+    }
+
+    .card .content p {
+        font-size: 1.4rem;
+    }
+
+    .container .card:hover .content {
+        margin-top: 30px;
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0.2s;
+    }
+}
+
+
+.pets {
+    max-width: 125rem;
+    margin: 90rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 6rem;
+    padding: 0 3rem;
+
+    @media (width >=768px) {
+        margin-top: 60rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (width >=992px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 22rem;
+    }
+
+    .pets-card {
+        background-color: #fff;
+        border-radius: 15px;
+    }
+
+    .pets-image {
+        border-radius: 15px 15px 0 0;
+        width: 100%;
+        height: 200px;
+        border-radius: 15px;
+    }
+
+    .pet-aposentado-1 {
+        background-image: url(../images/pets-images/cão-aposentado-1.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .pet-aposentado-2 {
+        background-image: url(../images/pets-images/cão-aposentado-2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 33%;
+
+    }
+
+    .pet-aposentado-3 {
+        background-image: url(../images/pets-images/cão-aposentado-3.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 23%;
+
+    }
+
+    .pet-aposentado-4 {
+        background-image: url(../images/pets-images/cães-aposentados-4.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 23%;
+    }
+
+    .pet-aposentado-5 {
+        background-image: url(../images/pets-images/cães-aposentados-5.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 23%;
+    }
+
+    .pet-idoso-1 {
+        background-image: url(../images/pets-images/cão-idoso-1.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 23%;
+    }
+
+    .pet-idoso-2 {
+        background-image: url(../images/pets-images/cão-idoso-2.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 40%;
+    }
+
+    .pet-idoso-3 {
+        background-image: url(../images/pets-images/cão-idoso-3.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 28%;
+    }
+
+    .pet-idoso-4 {
+        background-image: url(../images/pets-images/cão-idoso-4.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 35%;
+    }
+
+    .pets-image img {
+        border-radius: 100%;
+        width: 100%;
+        height: 150px;
+        margin: 0 auto;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .pets-content {
+        position: relative;
+        top: -1rem;
+        padding: 2rem 3rem;
+        background-color: #fff;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .pets-content h2 {
+        font-size: 2.2rem;
+        color: #6046DF;
+    }
+
+    .pets-content h3 {
+        font-size: 1.8rem;
+        color: #DAA918;
+    }
+
+    .pets-content p {
+        margin-top: 1rem;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: #000;
+    }
+
+    .pets-content a {
+        display: inline-block;
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        color: #fff;
+        background-color: #6046DF;
+        border: 2px solid #6046DF;
+        border-radius: 5rem;
+        padding: 1rem 3rem;
+        text-align: center;
+        margin-left: 0;
+        transition: all .3s;
+
+        &:hover {
+            background-color: transparent;
+            color: #6046DF;
+        }
+    }
+
+
+
+
+    /* flip card */
+
+    .flip-card {
+        margin-left: 30px;
+        perspective: 1000px;
+        height: 200px;
+        width: 460px;
+    }
+
+    .flip-card-inner {
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 30px;
+    }
+
+    .flip-card-back {
+        transform: rotateY(180deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .flip-card-back h1 {
+        margin-top: 30%;
+        font-size: 50px;
+    }
+
+    .flip-card-back p {
+        text-align: center;
+        margin-top: 15%;
+        font-size: 21px;
+        width: 90%;
+        height: 270px;
+    }
+
+    .flip-card-back button {
+        border-style: none;
+        width: 250px;
+        height: 100px;
+        border-radius: 100px;
+
+    }
+
+    .blur {
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        filter: blur(10px) opacity(0.4);
+        z-index: -1;
+        background-color: #0e0c0c;
+
+    }
+}
+
+
+/* rodapé */
+
+#rodape {
+    margin-top: 20rem;
+    width: 100%;
+    color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.rodapeLink {
+    text-decoration: none;
+}
+
+#rodapeContent {
+    height: 420px;
+    background-color: #171717;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 3.5rem;
+    font-size: 1.5rem;
+}
+
+#rodapeContatos h1 {
+    margin-bottom: 0.75rem;
+
+}
+
+#rodapeContatos img {
+    height: 50%;
+    width: 45%;
+    margin-left: 15%;
+    margin-bottom: 9px;
+}
+
+#redeSocial {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+#redeSocial .rodapeLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    color: #f5f5f5;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+#redeSocial .rodapeLink:hover {
+    opacity: 0.8;
+}
+
+#redeSocial .rodapeLink i {
+    font-size: 2.25rem;
+}
+
+#intagram {
+    background: linear-gradient(#7f37c9, #ff2992, #ff9807);
+}
+
+#github {
+    background-color: #4267b3;
+}
+
+#linkedin {
+    background-color: #023e8a;
+}
+
+.container-rodapeLista {
+    margin-left: 20%;
+}
+
+.rodapeLista {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75;
+    list-style: none;
+    margin-top: 5.1%;
+    justify-content: center;
+    margin-left: 8%;
+}
+
+.rodapeLista a {
+    text-decoration: none;
+    color: transparent;
+    color: #a8a29e;
+    transition: all 0.4s;
+}
+
+.rodapeLista li {
+    margin-top: 13px;
+}
+
+.rodapeLista a:hover {
+    color: #6046DF;
+}
+
+.rodapeLista i {
+    color: #6046DF;
+}
+
+.rodapeLista .rodapeLink {
+    color: #a8a29e;
+    transition: all 0.4s;
+}
+
+.rodapeLista .rodapeLink:hover {
+    color: #6046DF;
+}
+
+#rodapeSubscribe {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 5.8%;
+    justify-content: center;
+    
+}
+
+#rodapeSubscribe p {
+    color: #a8a29e;
+}
+
+#inputGroup {
+    display: flex;
+    align-items: center;
+    background-color: #0e0c0c;
+    border-radius: 4px;
+}
+
+#inputGroup input {
+    all: unset;
+    padding: 0.75rem;
+    width: 100%;
+}
+
+#inputGroup button {
+    background-color: #6046DF;
+    border: none;
+    color: #f5f5f5;
+    padding: 0px 1rem;
+    font-size: 2.12rem;
+    height: 100%;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#inputGroup button:hover {
+    opacity: 0.8;
+}
+
+#rodapeCopyright {
+    display: flex;
+    justify-content: center;
+    background-color: #0e0c0c;
+    font-size: 1.4rem;
+    padding: 1.5rem;
+    font-weight: 100;
+}
+
+#conteudo-principal,
+#sobre-nos,
+#container-imagem,
+#enviar {
+    visibility: hidden;
+}
